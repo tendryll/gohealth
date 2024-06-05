@@ -3,7 +3,7 @@
 ## Steps to build application
 ```
 $ mvn clean package
-$ docker build -t gohealth/assignment
+$ docker build -t gohealth/assignment .
 ```
 
 ## Usage

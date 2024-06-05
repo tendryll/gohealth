@@ -35,12 +35,30 @@ public class AssignmentApplication implements ApplicationRunner {
 
 	@Override
 	public void run(final ApplicationArguments args) {
-		args.getOptionNames().forEach(arg -> LOG.info("{}: {}", arg, args.getOptionValues(arg)));
-
 		if (action.equalsIgnoreCase("create")) {
 			issueService.createIssue(issueId, description, link);
 		} else if (action.equalsIgnoreCase("close")) {
 			issueService.deleteIssue(issueId);
 		}
+	}
+
+	public void setIssueId(final String issueId) {
+		this.issueId = issueId;
+	}
+
+	public void setDescription(final String description) {
+		this.description = description;
+	}
+
+	public void setLink(final String link) {
+		this.link = link;
+	}
+
+	public void setAction(final String action) {
+		this.action = action;
+	}
+
+	public void setIssueService(final IssueService issueService) {
+		this.issueService = issueService;
 	}
 }
